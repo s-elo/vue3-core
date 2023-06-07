@@ -1,0 +1,36 @@
+{
+  "name": "@vue/build-test",
+  "version": "3.3.2",
+  "description": "internal utils shared across @vue packages",
+  "main": "index.js",
+  "module": "dist/build-test.esm-bundler.js",
+  "types": "dist/build-test.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "sideEffects": false,
+  "buildOptions": {
+    "name": "VueBuildTest",
+    "formats": [
+      "global",
+      "esm-browser",
+      "esm-bundler",
+      "cjs"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuejs/core.git",
+    "directory": "packages/shared"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "Evan You",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vuejs/core/issues"
+  },
+  "homepage": "https://github.com/vuejs/core/tree/main/packages/shared#readme"
+}
