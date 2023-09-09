@@ -236,7 +236,7 @@ export function defineSlots<
  * modelValue.value = "hello"
  *
  * // default model with options
- * const modelValue = defineModel<stirng>({ required: true })
+ * const modelValue = defineModel<string>({ required: true })
  *
  * // with specified name (consumed via `v-model:count`)
  * const count = defineModel<number>('count')
@@ -303,7 +303,13 @@ type PropsWithDefaults<
       ? T[K]
       : NotUndefined<T[K]>
     : never
-} & { readonly [K in BKeys]-?: boolean }
+} & {
+  readonly [K in BKeys]-?: K extends keyof Defaults
+    ? Defaults[K] extends undefined
+      ? boolean | undefined
+      : boolean
+    : boolean
+}
 
 /**
  * Vue `<script setup>` compiler macro for providing props default values when
